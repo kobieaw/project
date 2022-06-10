@@ -23,7 +23,7 @@ export class AppService {
     // this.db = new JsonDB(new Config(DB_PATH, true, true, '/'));
     this.ipfsClient = create({
       host: 'localhost',
-      port: 5001,
+      port: 3000,
       protocol: 'http',
     });
   }

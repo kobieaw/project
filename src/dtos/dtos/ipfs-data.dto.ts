@@ -1,3 +1,3 @@
-export class IpfsDataDto {
-  constructor(public path: string, public cid: object, public size: number) {}
-}
+// export class IpfsDataDto {
+//   constructor(public path: string, public cid: object, public size: number) {}
+// }

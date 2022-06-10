@@ -10,6 +10,24 @@ export class AppController {
     throw new Error('Method not implemented.');
   }
   constructor(private readonly appService: AppService) {}
+
+  @Get('ipfs')
+  @ApiOperation({
+    summary: 'IPFS node connection',
+    description: 'Returns true if the IPFS node configured is running',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'IPFS node connection',
+    type: Boolean,
+  })
+  async ipfsOnline(): Promise<any> {
+    try {
+      return this.appService.isIpfsNodeOnline();
+    } catch (error) {
+      return error;
+    }
+  }
   // @Get('')
   // @ApiOperation({
   //   summary: 'Database contents',
@@ -31,23 +49,6 @@ export class AppController {
   //     throw new HttpException(error.message, 503);
   //   }
   // }
-  @Get('ipfs')
-  @ApiOperation({
-    summary: 'IPFS node connection',
-    description: 'Returns true if the IPFS node configured is running',
-  })
-  @ApiResponse({
-    status: 200,
-    description: 'IPFS node connection',
-    type: Boolean,
-  })
-  async ipfsOnline(): Promise<any> {
-    try {
-      return this.appService.isIpfsNodeOnline();
-    } catch (error) {
-      return error;
-    }
-  }
 
   //Creating a GET method to get the metadata by id
   // @Get('metadata/:id')
