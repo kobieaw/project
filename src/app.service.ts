@@ -4,7 +4,7 @@ import { create } from 'ipfs-http-client';
 // import { MetadataDto } from './dtos/dtos/metadata.dto';
 // import { FileData } from './schemas/file-data.interface';
 // import { FileDataDto } from './dtos/dtos/file-data.dto';
-// import { JsonDB } from 'node-json-db';
+import { JsonDB } from 'node-json-db';
 // import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
 
 //Creating a JSON schema for the file data
@@ -13,8 +13,8 @@ import { create } from 'ipfs-http-client';
 @Injectable()
 export class AppService {
   ipfsClient: IPFSHTTPClient;
-  // lastId: number;
-  // db: JsonDB;
+  lastId: number;
+  db: JsonDB;
 
   //Creating the ipfs client that creates a localhost
   //...with port 5001, and on the http protocol
@@ -40,22 +40,22 @@ export class AppService {
     }
   }
   //Returning all of the information in the database
-  // getAll() {
-  //   return this.db.getData('/');
-  // }
+  getAll() {
+    return this.db.getData('/');
+  }
   getHello() {
     return 'Hello World!';
   }
 
   //Creating a method to get the metadata by id
-  // getMetadataById(id: string) {
-  //   // let file: any;
-  //   // let metadata: MetadataDto;
-  //   try {
-  //     const metadata = this.ipfsClient.get(id);
-  //     return metadata;
-  //   } catch (error) {
-  //     return error;
-  //   }
-  // }
+  getMetadataById(id: string) {
+    // let file: any;
+    // let metadata: MetadataDto;
+    try {
+      const metadata = this.ipfsClient.get(id);
+      return metadata;
+    } catch (error) {
+      return error;
+    }
+  }
 }
