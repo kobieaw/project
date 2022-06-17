@@ -1,14 +1,16 @@
 import { Injectable, StreamableFile } from '@nestjs/common';
 import { IPFSHTTPClient } from 'ipfs-http-client';
 import { create } from 'ipfs-http-client';
-// import { MetadataDto } from './dtos/dtos/metadata.dto';
-// import { FileData } from './schemas/file-data.interface';
-// import { FileDataDto } from './dtos/dtos/file-data.dto';
+import { MetadataDto } from './block/dto/metadata.dto';
+import { FileData } from './schemas/file-data.interface';
+import { FileDataDto } from './block/dto/file-data.dto';
 import { JsonDB } from 'node-json-db';
 import { Config } from 'node-json-db/dist/lib/JsonDBConfig';
+import * as fs from 'fs';
+import { concat as uint8ArrayConcat } from 'uint8arrays/concat';
 
 //Creating a JSON schema for the file data
-const DB_PATH = './db/file-data.json';
+const DB_PATH = './db/db.json';
 
 @Injectable()
 export class AppService {
@@ -62,8 +64,8 @@ export class AppService {
 
   //Creating a method to get the metadata by id
   getMetadataById(id: string) {
-    // let file: any;
-    // let metadata: MetadataDto;
+    let file: any;
+    let metadata: MetadataDto;
     try {
       const metadata = this.ipfsClient.get(id);
       return metadata;
