@@ -1,5 +1,52 @@
-{
-    "imageName": 10
-    
-
-}
+[
+    {
+        "name": "UNC",
+        "image": "ipfs", 
+        "cid": "unknown"
+    },
+    {
+        "name": "Duke",
+        "image": "ipfs",
+        "cid": "unknown"
+    }, 
+    {
+        "name": "NCSU",
+        "image": "ipfs",
+        "cid": "unknown"
+    },
+    {
+        "name": "UNCG",
+        "image": "ipfs",
+        "cid": "unknown"
+    },
+    {
+        "name": "App State", 
+        "image": "ipfs",
+        "cid": "unknown"
+    }, 
+    {
+        "name": "Elon",
+        "image": "ipfs",
+        "cid": "unknown"
+    }, 
+    {
+        "name": "UNCC",
+        "image": "ipfs",
+        "cid": "unknown"
+    },
+    {
+        "name": "UNCW",
+        "image": "ipfs",
+        "cid": "unknown"
+    }, 
+    {
+        "name": "Wake Forest",
+        "image": "ipfs",
+        "cid": "unknown"
+    }, 
+    {
+        "name": "ECU",
+        "image": "ipfs",
+        "cid": "unknown"
+    }
+]
